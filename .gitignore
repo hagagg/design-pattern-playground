@@ -1,0 +1,13 @@
+# Java class files
+*.class
+
+# IntelliJ
+.idea/
+*.iml
+out/
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
