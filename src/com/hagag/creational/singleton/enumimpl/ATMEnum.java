@@ -1,24 +1,30 @@
-package com.hagag.singleton;
+package com.hagag.creational.singleton.enumimpl;
 
-public class ATM {
+    /*
+    Advantages of Enum in Singleton:
+     * Thread-safe by default (no need for synchronization)
+     * Serialization-safe — no need for readResolve()
+     * Reflection-safe — can't break into it via reflection
+     * Simple and concise syntax — no boilerplate code
+     */
+
+public enum ATMEnum {
+    INSTANCE;
+
     private double balance;
-    private static ATM instance;
 
-    private ATM() {
+    private ATMEnum() {
         this.balance = 1000;
-        System.out.println("ATM initalized with balance: " + this.balance);
-    }
-
-    public static ATM getInstance() {
-        if (instance == null) {
-            instance = new ATM();
-        }
-        return instance;
+        System.out.println("ATM initialized with balance: " + this.balance);
     }
 
     public double getBalance() {
         return balance;
     }
+
+
+    // Without enum (with normal class) I need to create a static method to get instance.
+
 
     public void deposit (double amount) {
         if (amount <= 0) {
@@ -39,4 +45,5 @@ public class ATM {
             System.out.println("Withdrawn: " + amount);
         }
     }
+
 }

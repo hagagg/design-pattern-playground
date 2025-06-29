@@ -1,11 +1,11 @@
-package com.hagag.chain_of_responsibility;
+package com.hagag.chainofresponsibility;
 
-public class PayPalPayment implements PaymentHandler {
-    private double amount;
+public class CreditCardPayment implements PaymentHandler{
+    private double balance;
     private PaymentHandler next;
 
-    public PayPalPayment(double amount) {
-        this.amount = amount;
+    public CreditCardPayment(double balance) {
+        this.balance = balance;
     }
 
     @Override
@@ -15,13 +15,12 @@ public class PayPalPayment implements PaymentHandler {
 
     @Override
     public void handlePayment(PaymentRequest paymentRequest) {
-        if (paymentRequest.getAmount() <= amount) {
-            System.out.println("You have paid $" + paymentRequest.getAmount() + " with PayPal");
+        if (paymentRequest.getAmount() <= balance) {
+            System.out.println("You have paid $" + paymentRequest.getAmount() + " with Credit Card");
         } else if (next != null) {
             next.handlePayment(paymentRequest);
         } else {
             System.out.println("Payment Failed.");
         }
     }
-
 }

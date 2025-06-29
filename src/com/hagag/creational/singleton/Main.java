@@ -1,6 +1,4 @@
-package com.hagag.singleton;
-
-import com.hagag.singleton.ATM;
+package com.hagag.creational.singleton;
 
 public class Main {
     public static void main(String[] args) {

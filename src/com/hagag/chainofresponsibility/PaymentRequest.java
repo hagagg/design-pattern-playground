@@ -1,4 +1,4 @@
-package com.hagag.chain_of_responsibility;
+package com.hagag.chainofresponsibility;
 
 public class PaymentRequest {
 
