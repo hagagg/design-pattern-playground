@@ -9,7 +9,7 @@ public class ATM {
         System.out.println("ATM initalized with balance: " + this.balance);
     }
 
-    public static ATM getInstance() {
+    public static synchronized ATM getInstance() {
         if (instance == null) {
             instance = new ATM();
         }
