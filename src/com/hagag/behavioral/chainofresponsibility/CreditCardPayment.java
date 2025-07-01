@@ -1,10 +1,10 @@
-package com.hagag.chainofresponsibility;
+package com.hagag.behavioral.chainofresponsibility;
 
-public class WalletPayment implements PaymentHandler{
+public class CreditCardPayment implements PaymentHandler{
     private double balance;
     private PaymentHandler next;
 
-    public WalletPayment(double balance) {
+    public CreditCardPayment(double balance) {
         this.balance = balance;
     }
 
@@ -16,7 +16,7 @@ public class WalletPayment implements PaymentHandler{
     @Override
     public void handlePayment(PaymentRequest paymentRequest) {
         if (paymentRequest.getAmount() <= balance) {
-            System.out.println("You have paid $" + paymentRequest.getAmount() + " with wallet");
+            System.out.println("You have paid $" + paymentRequest.getAmount() + " with Credit Card");
         } else if (next != null) {
             next.handlePayment(paymentRequest);
         } else {

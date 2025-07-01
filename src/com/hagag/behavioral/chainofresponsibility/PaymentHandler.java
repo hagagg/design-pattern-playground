@@ -1,4 +1,4 @@
-package com.hagag.chainofresponsibility;
+package com.hagag.behavioral.chainofresponsibility;
 
 public interface PaymentHandler {
 
